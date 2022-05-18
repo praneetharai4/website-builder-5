@@ -24,6 +24,7 @@ const editor = grapesjs.init({
         //       // select: true, // Default with `activate: true`
         //     }
         //   ],
+        
           
     },
     layerManager: {
@@ -50,6 +51,12 @@ const editor = grapesjs.init({
         ],
 
     },
+    traitManager: {
+        appendTo: "#trait-container",
+      },
+    selectorManager: {
+        appendTo: "#style-view",
+      },
     panels: {
         defaults: [
             {
@@ -126,27 +133,29 @@ editor.Commands.add('set-device-desktop', {
   editor.Commands.add('set-device-mobile', {
     run: (editor) => editor.setDevice('Mobile'),
   });
+editor.Commands.add('preview',{ run: (editor)=>editor.preview.Manager.preview()
 
+});
    
-//   function code()
-//   {
-//        var demo = editor.getHtml();
-//        var democss = editor.getCss();
-//        var demojs = editor.getJs();
-//        alert(demo);
-//        alert(democss);
-//        alert(demojs);
-//   }
-   function code()
-   {
-       const fs = require('fs')
-       const demo = editor.getHtml();
-        fs.writeFile('/Users/praneethadrai/Documents/Praneetha/React/ex.txt',demo, err => {
-            if(err)
-            {
-                console.error(err);
-            }
-        }
-        );
+  function code()
+  {
+       var demo = editor.getHtml();
+       var democss = editor.getCss();
+       var demojs = editor.getJs();
+       alert(demo);
+       alert(democss);
+       alert(demojs);
+  }
+//    function code()
+//    {
+//        const fs = require('fs')
+//        const demo = editor.getHtml();
+//         fs.writeFile('/Users/praneethadrai/Documents/Praneetha/React/ex.txt',demo, err => {
+//             if(err)
+//             {
+//                 console.error(err);
+//             }
+//         }
+//         );
        
-   }
+//    }

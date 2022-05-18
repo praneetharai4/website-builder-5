@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/resources/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <script src="/resources/js/lib/grapesjs-blocks-basic.js"></script>
-    
+
     <script src="resources/js/lib/grapesjs-plugin-forms.min.js"></script>
 </head>
 
@@ -63,7 +63,7 @@
         <div>
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="block-tab" data-bs-toggle="tab" data-bs-target="#block"
+                    <button class="nav-link active" id="block-tab" data-bs-toggle="tab" data-bs-target="#block" type="button" role="tab"
                         aria-selected="true" aria-controls="block">
                         <i class="bi bi-grid-fill">
 
@@ -72,8 +72,8 @@
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="trait-tab" data-bs-toggle="tab" data-bs-target="#trait"
-                        aria-selected="true" aria-controls="trait">
+                    <button class="nav-link" id="layer-tab" data-bs-toggle="tab" data-bs-target="#layer" type="button" role="tab"
+                        aria-selected="false" aria-controls="layer">
                         <i class="bi bi-layers-fill">
 
                         </i>
@@ -81,91 +81,109 @@
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="block-tab" data-bs-toggle="tab" data-bs-target="#style"
-                        aria-selected="true" aria-controls="style">
+                    <button class="nav-link" id="style-tab" data-bs-toggle="tab" data-bs-target="#style" type="button" role="tab"
+                        aria-selected="false" aria-controls="style">
                         <i class="bi bi-palette-fill">
 
                         </i>
 
                     </button>
                 </li>
+                <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="trait-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#trait"
+              type="button"
+              role="tab"
+              aria-controls="trait"
+              aria-selected="false"
+            >
+              <i class="bi bi-gear-fill"></i>
+            </button>
+          </li>
 
 
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="block" role="tabpanel" aria-labelledby="block-tab">
                     <div id="blocks">
-                        
+
                     </div>
                     {{!-- <div id="gjs" style="height:0px; overflow:hidden">
-      <form action="index.html" method="post" style="padding: 50px;">
-        <input type="hidden" name="hidden-input" value="someval">
-        <div class="row">
-          <label>Name</label>
-          <input type="text" name="text-input" value="">
-        </div>
-        <div class="row">
-          <label>Messagge</label>
-          <textarea name="textarea-input"></textarea>
-        </div>
-        <div class="row">
-          <label>Options</label>
-          <select name="select-input">
-            <option value="">- Select -</option>
-            <option value="1">Value 1</option>
-            <option value="2">Value 2</option>
-            <option value="3">Value 3</option>
-          </select>
-        </div>
-        <script type="text/javascript">
-      var editor = grapesjs.init({
-        height: '100%',
-        noticeOnUnload: 0,
-        storageManager:{autoload: 0},
-        container : '#gjs',
-        fromElement: true,
+                        <form action="index.html" method="post" style="padding: 50px;">
+                            <input type="hidden" name="hidden-input" value="someval">
+                            <div class="row">
+                                <label>Name</label>
+                                <input type="text" name="text-input" value="">
+                            </div>
+                            <div class="row">
+                                <label>Messagge</label>
+                                <textarea name="textarea-input"></textarea>
+                            </div>
+                            <div class="row">
+                                <label>Options</label>
+                                <select name="select-input">
+                                    <option value="">- Select -</option>
+                                    <option value="1">Value 1</option>
+                                    <option value="2">Value 2</option>
+                                    <option value="3">Value 3</option>
+                                </select>
+                            </div>
+                            <script type="text/javascript">
+                                var editor = grapesjs.init({
+                                    height: '100%',
+                                    noticeOnUnload: 0,
+                                    storageManager: { autoload: 0 },
+                                    container: '#gjs',
+                                    fromElement: true,
 
-        plugins: ['grapesjs-plugin-forms'],
-        pluginsOpts: {
-          'grapesjs-plugin-forms': {}
-        }
-      });
-    </script>
-        <div class="row">
-          <input type="checkbox" name="checkbox-input" value="1"> Test
-        </div>
-        <div class="row">
-          <input type="radio" name="radio-input" value="1"> 1
-          <input type="radio" name="radio-input" value="2"> 2
-          <input type="radio" name="radio-input" value="3"> 3
-        </div>
-        <button type="button" name="button-name">Send</button>
-      </form>
-      <style>
-      </style> --}}
-    </div>
-
-
-                    
+                                    plugins: ['grapesjs-plugin-forms'],
+                                    pluginsOpts: {
+                                        'grapesjs-plugin-forms': {}
+                                    }
+                                });
+                            </script>
+                            <div class="row">
+                                <input type="checkbox" name="checkbox-input" value="1"> Test
+                            </div>
+                            <div class="row">
+                                <input type="radio" name="radio-input" value="1"> 1
+                                <input type="radio" name="radio-input" value="2"> 2
+                                <input type="radio" name="radio-input" value="3"> 3
+                            </div>
+                            <button type="button" name="button-name">Send</button>
+                        </form>
+                        <style>
+                        </style> --}}
+                    {{!-- </div> --}}
 
 
-    
+
+
+
+
 
                 </div>
-                <div class="tab-pane fade" id="trait" role="tabpanel" aria-labelledby="block-tab">
+                <div class="tab-pane fade" id="layer" role="tabpanel" aria-labelledby="layer-tab">
                     <div id="layer-container"></div>
-                    
+
 
                 </div>
-                <div class="tab-pane fade" id="style" role="tabpanel" aria-labelledby="block-tab">
+
+                <div class="tab-pane fade" id="style" role="tabpanel" aria-labelledby="style-tab">
                     <div id="style-view"></div>
 
+                </div>
+                <div class="tab-pane fade" id="trait" role="tabpanel" aria-labelledby="trait-tab">
+                    <div id="trait-container"></div>
                 </div>
             </div>
         </div>
     </div>
     {{!-- <div id="gjs"></div> --}}
-    
+
 
 
     <div class="main-content">
@@ -176,7 +194,7 @@
                 <div class="panel__basic-action"></div>
 
             </div>
-            
+
 
         </nav>
         <div id="editor"></div>
@@ -212,8 +230,9 @@
     </div>
     <script type="text/javascript" src="/resources/js/custom.js"></script>
     <script type="text/javascript" src="/resources/js/main.js"></script>
-    
-    
+    <script type="text/javascript" src="/resources/js/preview.js"></script>
+
+
 
 </body>
 
