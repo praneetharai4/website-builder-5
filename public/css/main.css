@@ -63,9 +63,9 @@ html {
     top: 0;
 }
 
-/* .gjs-pn-btn {
-    border: 1px solid white;
-} */
+.gjs-pn-btn {
+    border: 1px solid #990011ff;
+}
 .gjs-one-bg {
     background-color: #fcf6f5ff;
 }
