@@ -531,3 +531,4 @@ function code()
             alert (data.responseText);
         }
     })}
+// editor.setComponents('<div class="c">HEllo</div>');

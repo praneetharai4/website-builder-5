@@ -12,20 +12,18 @@ app.use(cors());
 app.use('/resources', express.static(path.join(__dirname, 'public')));
 app.use('views', express.static(path.join(__dirname, 'views')));
 
-// const mongoUri = 'mongodb://localhost:27017/webpage_builder';
-// mongoose.connect(
-//   mongoUri,
-//   {
-//     useCreateIndex: true,
-//     useFindAndModify: false,
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   },
-//   (err) => {
-//     if (err) throw err;
-//     console.log('Connected to MongoDB');
-//   },
-// );
+const mongoUri = 'mongodb://localhost:27017/usersdb';
+mongoose.connect(
+  mongoUri,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  },
+  (err) => {
+    if (err) throw err;
+    console.log('Connected to MongoDB');
+  },
+);
 
 app.set('view engine', 'hbs');
 
